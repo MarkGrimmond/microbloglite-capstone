@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image and Video Layout with Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* Aligns items in a column */
+        }
+        .navbar {
+            width: 100%; 
+            position: fixed; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .content-container {
+            display: flex;
+            flex-grow: 1;
+            padding-top: 70px;
+        }
+        .image-container {
+            position: relative;
+            flex: 1; 
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
+        .text-container {
+            width: 25%; 
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            padding: 20px; 
+        }
+        .image-container img, .image-container video {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, z-index 0s;
+            z-index: 1; /* Initial z-index for all images and videos */
+        }
+        .image-container img:hover, .image-container video:hover {
+            transform: scale(1.05); 
+            z-index: 2;
+        }
+        img#img1, img#img2, img#img3, video#vid4 {
+            width: 20%; 
+            position: absolute; 
+        }   
+        img#img1 { top: 18%; left: 13%; }
+        img#img2 { top: 23%; left: 23%; }
+        img#img3 { top: 28%; left: 7%; }
+        video#vid4 { top: 38%; left: 12%; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">NarrativeNest</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="login.html">Login</a>
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="content-container">
+        <div class="image-container">
+            <img id="img1" src="images/coffee.jpg" alt="Image 1">
+            <img id="img2" src="images/plant.jpg" alt="Image 2">
+            <img id="img3" src="images/interior design.jpg" alt="Image 3">
+            <video id="vid4" autoplay loop muted>
+                <source src="images/4065231-uhd_4096_2160_25fps.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="text-container">
+           <h1>Interact With Others</h1>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signupForm">
+                        <div class="mb-3">
+                            <label for="signupUsername" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="signupUsername" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signupPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="signupConfirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the default way
+            // You can add validation here if needed
+            window.location.href = 'index.html'; // Redirect to the login page
+        });
+    </script>
+</body>
+</html>

@@ -1,1 +1,79 @@
-/* Posts Page CSS */
+.navbar {
+    background-color: #343a40; /* Dark grey for a modern look */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-link {
+    margin-right: 10px; /* Ensures equal spacing */
+    transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #f8f9fa; /* Light color for hover */
+    background-color: transparent;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #f8f9fa;
+    transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #adb5bd; /* Light grey for hover */
+}
+
+#logoutButton {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#logoutButton:hover {
+    background-color: #bd2130; /* Darker red on hover */
+    color: #ffffff;
+}
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+}
+
+.card-header {
+    background-color: #ffffff; /* Clean white headers */
+    border-bottom: 1px solid #e9ecef; /* Subtle separation */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* posts.css */
+
+.card {
+    margin: 1rem;
+}
+
+/* Warm grey theme for cards */
+.card-header {
+    background-color: #a8a8a8; /* Warm grey */
+    color: white;
+}
+
+.card-body {
+    background-color: #f5f5f5; /* Very light warm grey */
+    color: black;
+}
+
+.btn-warm {
+    background-color: #787878; /* Darker warm grey */
+    color: white;
+}
+
+.btn-warm:hover {
+    background-color: #606060; /* Even darker warm grey */
+    color: white;
+}

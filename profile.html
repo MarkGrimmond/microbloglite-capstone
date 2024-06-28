@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <!-- Global and Page-specific CSS -->
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="./posts.css">
+
+    <!-- Redirect if not logged in -->
+    <script src="../auth.js"></script>
+    <script>
+        if (isLoggedIn() === false) window.location.replace("/");
+    </script>
+
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .form-control,
+        .btn-light-pine-green {
+            margin-top: 10px;
+        }
+
+        .btn-light-pine-green {
+            background-color: #e1f4e8;
+           
+            color: #333;
+            
+            border: none;
+        }
+
+        .btn-light-pine-green:hover {
+            background-color: #cde5d7;
+            
+        }
+
+        .card {
+            background: linear-gradient(to bottom right, #e0f5e0, #f5faf5);
+            border: 1px solid #e0f5e0;
+        }
+    </style>
+
+    <script src="../auth.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">NarrativeNest</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <input id="logoutButton" class="btn btn-light-pine-green" type="button" value="Logout">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Profile page</h1>
+        <div class="row">
+            <!-- Card Column -->
+            <div class="col-md-6">
+                <div class="card" style="width: 100%;">
+                    <img src="images/kanye meme.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mark Grimmond</h5>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
+                            aspernatur temporibus quas, obcaecati impedit earum accusamus rerum id harum possimus
+                            magnam, eum cum fuga, quae omnis! Minus dignissimos eligendi laboriosam.</p>
+                        <a href="#" class="btn btn-light-pine-green">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Textarea Column -->
+            <div class="col-md-6">
+                <form action="index.html">
+                    <textarea id="textBox" name="w3review" rows="10" class="form-control"></textarea>
+                    <input id="btn" type="button" class="btn btn-light-pine-green" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+ 
+
+   
+
+    <script src="./posts.js"></script>
+    <script src="profile.js"></script>
+</body>
+
+</html>
